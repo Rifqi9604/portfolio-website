@@ -35,12 +35,12 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased ",
           fontComfortaa.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <div className="relative flex flex-col h-screen">
+          <div className="relative flex flex-col h-screen dark dark:bg-gradient-to-br from-[#210328] via-[#410548] to-transparent">
             <Navbar />
             <main className="container mx-auto max-w-7xl pt-12 px-6 flex-grow md:pt-8">
               {children}

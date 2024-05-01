@@ -1,6 +1,8 @@
 import { title } from "@/components/primitives";
 import pasfoto from "@/public/pasfoto.jpg";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 export default function AboutPage() {
   return (
     <div className="max-w-screen flex flex-col gap-10">
@@ -16,9 +18,21 @@ export default function AboutPage() {
           />
         </div>
         <div className="md:max-w-[50%]">
-          <p className="text-justify text-lg font-semibold">
-            I'm a 4th semester{" "}
-            <span className="title" style={{ color: "violet" }}>
+          <p
+            className="text-justify text-lg font-semibold"
+          >
+            My name is{" "}
+            <span
+              className="hover:scale-110 transition-transform duration-300"
+              style={{ color: "blueviolet" }}
+            >
+              Rifqi
+            </span>
+            , I'm a 4th semester{" "}
+            <span
+              className="hover:scale-100 transition-transform duration-300 title"
+              style={{ color: "violet" }}
+            >
               <span className="text-lg">Information Systems </span>
             </span>
             student who's passionate about Frontend web development,
