@@ -35,7 +35,6 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const menuItems = [
     "Profile",
-    "Skills",
     "Projects",
     "Contact Me",
   ];
@@ -45,7 +44,7 @@ export const Navbar = () => {
       maxWidth="xl"
       position="sticky"
       onMenuOpenChange={setIsMenuOpen}
-	  className="border-b-[1px] shadow-lg border-none dark dark:bg-transparent dark:text-white"
+	  className="border-b-[1px] shadow-lg bg-transparent border-none dark:"
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
@@ -55,16 +54,11 @@ export const Navbar = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu className="dark dark:text-black">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : "foreground"
-              }
-              className="w-full"
+              className="w-full text-black"
               href="#"
               size="lg"
             >
