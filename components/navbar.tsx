@@ -21,22 +21,16 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  InstagramIcon,
-  GithubIcon,
-  LinkedInIcon,
-  HeartFilledIcon,
-  SearchIcon,
-} from "@/components/icons";
+import { GithubIcon } from "@/components/icons";
 
 import { Logo } from "@/components/icons";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const menuItems = [
-    "Profile",
-    "Projects",
-    "Contact Me",
+    { label: "Profile", href: "/profile" },
+    { label: "Projects", href: "/projects" },
+    { label: "Contact Me", href: "/contact" },
   ];
 
   return (
@@ -44,25 +38,24 @@ export const Navbar = () => {
       maxWidth="xl"
       position="sticky"
       onMenuOpenChange={setIsMenuOpen}
-	  className="border-b-[1px] shadow-lg bg-transparent border-none dark:"
+      className="border-b-[1px] shadow-lg bg-transparent border-none dark:"
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1 mt-12" href="/">
+          <NextLink
+            className="flex justify-start items-center gap-1 mt-12"
+            href="/"
+          >
             <Logo />
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarMenu className="dark dark:text-black">
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full text-black"
-              href="#"
-              size="lg"
-            >
-              {item}
+        {menuItems.map((item) => (
+          <NavbarMenuItem key={item.href}>
+            <Link className="w-full text-white" href={item.href} size="lg">
+              {item.label}
             </Link>
           </NavbarMenuItem>
         ))}
@@ -82,22 +75,22 @@ export const Navbar = () => {
           <Link isExternal href={siteConfig.links.github} aria-label="github">
             <GithubIcon className="text-default-500" />
           </Link> */}
-		  <ul className="hidden lg:flex gap-6 justify-end mr-6">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium"
-                )}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
-        </ul>
+          <ul className="hidden lg:flex gap-6 justify-end mr-6">
+            {siteConfig.navItems.map((item) => (
+              <NavbarItem key={item.href}>
+                <NextLink
+                  className={clsx(
+                    linkStyles({ color: "foreground" }),
+                    "data-[active=true]:text-primary data-[active=true]:font-medium"
+                  )}
+                  color="foreground"
+                  href={item.href}
+                >
+                  {item.label}
+                </NextLink>
+              </NavbarItem>
+            ))}
+          </ul>
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
