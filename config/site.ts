@@ -12,10 +12,10 @@ export const siteConfig = {
       label: "Projects",
       href: "/projects",
     },
-    {
-      label: "Contact Me",
-      href: "/contactme",
-    },
+    // {
+    //   label: "Contact Me",
+    //   href: "/contactme",
+    // },
   ],
   navMenuItems: [
     {
@@ -53,7 +53,7 @@ export const siteConfig = {
   ],
   links: {
     github: "https://github.com/Rifqi9604",
-	instagram: "https://instagram.com/mrfz_n/",
+	  instagram: "https://instagram.com/mrfz_n/",
 	linkedin: "https://www.linkedin.com/in/muhammad-rifqi-fauzan-a2a435246/",
   },
 };

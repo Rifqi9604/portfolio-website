@@ -5,7 +5,7 @@ export default function PricingLayout({
 }) {
 	return (
 		<section className="flex flex-col pb-4 justify-center items-center">
-			<div className="inline-block max-w-full text-center mb-4">
+			<div className="inline-block max-w-full text-center">
 				{children}
 			</div>
 		</section>

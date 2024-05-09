@@ -30,7 +30,7 @@ export const Navbar = () => {
   const menuItems = [
     { label: "Profile", href: "/profile" },
     { label: "Projects", href: "/projects" },
-    { label: "Contact Me", href: "/contact" },
+    // { label: "Contact Me", href: "/contact" },
   ];
 
   return (
