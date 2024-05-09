@@ -4,7 +4,7 @@ function ProjectCards() {
   return (
     <div>
       <Card className="py-4 flex flex-col-reverse">
-        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+        <CardHeader className="pt-2 px-4 flex-col items-start">
           <p className="text-tiny uppercase font-bold">Daily Mix</p>
           <small className="text-default-500">12 Tracks</small>
           <h4 className="font-bold text-large">Frontend Radio</h4>
@@ -13,7 +13,7 @@ function ProjectCards() {
           <Image
             alt="Card background"
             className="object-cover rounded-xl"
-            src="https://nextui.org/images/hero-card-complete.jpeg"
+            src="../public/rifqiWebsite.jpg"
             width={270}
             height={270}
           />
